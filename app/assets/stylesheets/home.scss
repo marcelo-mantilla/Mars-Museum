@@ -7,5 +7,24 @@ canvas {
   top: 0;
   left: 0;
 }
+.three-js{
+  z-index: 0;
+}
 
+main {
+  position: absolute;
+}
 
+.pondermars-brand {
+  z-index: 1;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20em;
+  transition: 3s;
+}
+
+.logo {
+  width: 500px;
+}

@@ -17,15 +17,27 @@ renderer.render (scene, camera)
 const geometry = new THREE.IcosahedronGeometry(10, 1)
 const geometry2 = new THREE.TorusGeometry(10, 3, 16, 100)
 
+
+//MARS
+const marsTexture = new THREE.TextureLoader().load('/images/3d-models/98-mars-photorealistic-2k/Textures/Diffuse_2K.png')
+const mars = new THREE.Mesh(
+  new THREE.SphereGeometry(10, 32, 30),
+  new THREE.MeshStandardMaterial( {
+    map: marsTexture
+  })
+)
+
 const material = new THREE.MeshStandardMaterial( {color: 0xFF6347 })
 const icosahedron = new THREE.Mesh(geometry, material)
 const torus = new THREE.Mesh(geometry2, material)
 
 // scene.add(icosahedron)
-scene.add(torus)
+scene.add(mars)
 
+
+//Lights
 const pointLight = new THREE.PointLight(0xffffff)
-pointLight.position.set(0,-5,20)
+pointLight.position.set(50,0,25)
 scene.add(pointLight)
 
 //HELPERS
@@ -36,9 +48,11 @@ scene.add(axesHelper)
 scene.add(pointLightHelper)
 scene.add(gridHelper)
 
+
 const controls = new OrbitControls(camera, renderer.domElement)
 
-const spaceTexture = new THREE.TextureLoader().load('assets/images/universe-images/7058.jpeg')
+const spaceTexture = new THREE.TextureLoader().load('/images/universe-images/7058.jpeg')
+scene.background = spaceTexture
 
 
 animate()
@@ -51,9 +65,9 @@ function addStars(){
   const geometry = new THREE.SphereGeometry(0.25, 24, 24)
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
   const star = new THREE.Mesh( geometry, material )
-  
+
   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 150 ))
-  
+
   star.position.set(x, y, z)
   scene.add(star)
 }
@@ -70,9 +84,9 @@ function animate(){
 }
 
 function moveCamera(){
-  
+
   const t = document.body.getBoundingClientRect().top //Allows us to see how far from the top of the page we are
-  
+
   camera.position.z = t * -0.01
   camera.position.x = t * 0.0002
 }
