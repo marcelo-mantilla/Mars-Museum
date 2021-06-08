@@ -13,18 +13,24 @@ canvas {
 
 main {
   position: absolute;
-}
-
-.pondermars-brand {
-  z-index: 1;
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20em;
-  transition: 3s;
+  width: 100vw;
+  height: 100vh;
 }
 
-.logo {
-  width: 500px;
+.horizontal-section {
+  position: absolute;
+  width: 100vw;
+  top: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mute-unmute {
+  display: block;
+  top: 100px;
+  left: 100px;
 }
