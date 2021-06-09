@@ -20,17 +20,93 @@ main {
   height: 100vh;
 }
 
-.horizontal-section {
+.mute-horizontal {
   position: absolute;
   width: 100vw;
-  top: 80vh;
+  top: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.mute-unmute {
+#interaction-container {
+  cursor: pointer;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.mute-button {
+  transition: 0.5s;
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  flex-grow: 1;
+}
+.mute-button:hover {
+  color: rgb(247, 140, 0);
+  transition: 0.5s;
+}
+
+.mars-overlay {
+  width: 100vw;
+  position: absolute;
+  top: 45vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#projects {
+  opacity: 1;
+}
+
+.mars-items {
+  padding: 18px 45px;
+  opacity: 1;
+}
+
+.project {
+  width: 25vw;
+}
+.project-image {
   display: block;
-  top: 100px;
-  left: 100px;
+  width: 100%;
+  border-radius: 1em;
+}
+
+.none {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.x {
+
 }

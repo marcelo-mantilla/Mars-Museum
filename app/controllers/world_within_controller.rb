@@ -1,0 +1,2 @@
+class WorldWithinController < ApplicationController
+end

@@ -4,47 +4,37 @@
     <meta charset="utf-8">
     <title>Ponder Mars - Home</title>
 
+    <!-- CDNs -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
     <%= stylesheet_link_tag "home" %>
-    <%= javascript_pack_tag 'ponder-three' %>
   </head>
   <body>
     <canvas id="bg" class="webgl three-js"></canvas>
 
-    <div class="horizontal-section">
-
-      <div class="mute-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-volume-mute-fill muted" viewBox="0 0 16 16" id="mute-unmute">
-          <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
-        </svg>
+    <div class="mute-horizontal">
+      <div id="mute-container">
+        <i class="fas fa-volume-mute fa-2x mute-button"></i>
       </div>
-
     </div>
 
+    <div class="mars-overlay none" id="projects">
+      <a href="">
+        <button type="button" class="btn btn-outline-light mars-items font-weight-bold">The Mars Museum  🛰</button>
+      </a>
+      <a href="">
+        <button type="button" class="btn btn-outline-light mars-items">About  💾</button>
+      </a>
+      <a href="">
+        <button type="button" class="btn btn-outline-light mars-items">A World Within  🌺</button>
+      </a>
+    </div>
+    
+    
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <%= javascript_pack_tag 'ponder-three' %>
+    <%= javascript_pack_tag 'ponder' %>
     <%= stylesheet_link_tag 'home' %>
   </body>
 </html>
