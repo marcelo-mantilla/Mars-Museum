@@ -9,6 +9,8 @@ var dx = .05;
 var dy = -.01;
 var dz = -.05;
 var projects = document.getElementById("projects")
+var ponderMars = document.getElementById("ponder-mars")
+console.log(ponderMars)
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
@@ -27,18 +29,20 @@ var toBloom = new Audio('/audio/pondermars-tobloom.mp3')
 var muteButton = document.getElementsByClassName('mute-button')[0]
 
 muteButton.addEventListener("click", function() {
-  console.log("Hello!")
   muteButton.classList.toggle("fa-volume-mute")
   muteButton.classList.toggle("fa-volume-up")
   muteButton.classList.toggle("text-dark")
 
   if (muteButton.classList.contains("fa-volume-mute")) {
-    console.log("mute works!")
     toBloom.pause()
   } else if (muteButton.classList.contains("fa-volume-up")){
-    console.log("play works!")
     toBloom.play()
   }
+  ponderMars.classList.remove("none")
+  ponderMars.style.animation = "logo-animation"
+  ponderMars.style.animationDuration = "7s"
+  ponderMars.style.animationDelay = "10s"
+  ponderMars.style.animationFillMode = "forwards"
 })
 
 window.addEventListener("wheel", function (){
@@ -104,7 +108,7 @@ loaderDeimos.load('/images/3d-models/Deimos_1_1000.glb', function ( gltf ){
 
   let r = 52
   let theta = 0
-  let dTheta = 2 * Math.PI / 2430
+  let dTheta = 2 * Math.PI / 4430
 
   var render = function() {
     mars.rotation.y += .0002
@@ -132,7 +136,7 @@ loaderPhobos.load('/images/3d-models/Phobos_1_1000.glb', function ( gltf ){
 
   let r = 35
   let theta = 0
-  let dTheta = 2 * Math.PI / 850
+  let dTheta = 2 * Math.PI / 2850
 
   var render = function() {
     mars.rotation.y += .001
@@ -199,7 +203,7 @@ var render = function() {
 render();
 
 function addStars(){
-  const geometry = new THREE.SphereGeometry(0.2, 24, 24)
+  const geometry = new THREE.IcosahedronGeometry(0.2, 0)
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
   const star = new THREE.Mesh( geometry, material )
 
@@ -208,7 +212,7 @@ function addStars(){
   star.position.set(x, y, z)
   scene.add(star)
 }
-Array(320).fill().forEach(addStars)
+Array(70).fill().forEach(addStars)
 
 //Responsive window resizing
 window.addEventListener('resize', () => {
@@ -220,7 +224,7 @@ window.addEventListener('resize', () => {
 
 function animate(){
   requestAnimationFrame( animate )
-  mars.rotation.y += 0.002
+  mars.rotation.y += 0.0002
   mars.rotation.x += 0.0
   mars.rotation.z += 0.0
   controls.update()

@@ -12,6 +12,29 @@
   </head>
   <body>
     <canvas id="bg" class="webgl three-js"></canvas>
+    
+    <div id="ponder-mars" class="none">
+      <img src="/images/ponder-mars/ponder-mars-logo.png" alt="Ponder Mars" class="ponder-mars-logo">
+    </div>
+
+
+    <div class="mars-overlay none" id="projects">
+      <a href="">
+        <button type="button" class="btn btn-outline-light mars-items font-weight-bold">
+          <%= link_to "The Mars Museum  🛰", "mars-museum", style: 'text-decoration: none;' %>
+        </button>
+      </a>
+      <a href="">
+        <button type="button" class="btn btn-outline-light mars-items">
+          <%= link_to "About  💾", "about", style: 'text-decoration: none;' %>
+        </button>
+      </a>
+      <a href="">
+        <button type="button" class="btn btn-outline-light mars-items">
+          <%= link_to "A World Within  🌺", "world-within", style: 'text-decoration: none;' %>
+        </button>
+      </a>
+    </div>
 
     <div class="mute-horizontal">
       <div id="mute-container">
@@ -19,17 +42,7 @@
       </div>
     </div>
 
-    <div class="mars-overlay none" id="projects">
-      <a href="">
-        <button type="button" class="btn btn-outline-light mars-items font-weight-bold">The Mars Museum  🛰</button>
-      </a>
-      <a href="">
-        <button type="button" class="btn btn-outline-light mars-items">About  💾</button>
-      </a>
-      <a href="">
-        <button type="button" class="btn btn-outline-light mars-items">A World Within  🌺</button>
-      </a>
-    </div>
+    
     
     
     
