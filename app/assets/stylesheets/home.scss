@@ -7,9 +7,6 @@ canvas {
   top: 0;
   left: 0;
 }
-.three-js{
-  z-index: 0;
-}
 
 main {
   position: absolute;
@@ -29,14 +26,6 @@ main {
   justify-content: center;
 }
 
-#interaction-container {
-  cursor: pointer;
-  padding: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
 .mute-button {
   transition: 0.5s;
   cursor: pointer;
@@ -49,21 +38,20 @@ main {
   transition: 0.5s;
 }
 
-.mars-overlay {
-  width: 100vw;
+.main {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 45vh;
-
+  
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-right: 8.5%;
 }
 
 #projects {
   opacity: 1;
   animation-name: fade-in;
-  animation-duration: 4s;
+  animation-duration: 3s;
 }
 
 @keyframes fade-in {
@@ -76,9 +64,6 @@ main {
   opacity: 1;
 }
 
-.project {
-  width: 25vw;
-}
 .project-image {
   display: block;
   width: 100%;
@@ -87,14 +72,15 @@ main {
 
 .none {
   display: none;
+  transition: 3s;
 }
 
 #ponder-mars {
   position: absolute;
-  width: 470px;
+  width: 430px;
   left: 50%;
-  top: 85px;
-  margin-left: -235px;
+  top: 74px;
+  margin-left: -215px;
   opacity: 0;
 }
 
@@ -108,27 +94,95 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.x {
-
+// ------------------ CARD SECTION ------------------ 
+article{
+  display: inline-block;
+  width: 18em;
+  border: 1em;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background-color: black;  
+  
 }
+// @media article (min-width: 2000px){
+//   width: 22em;
+// }
+
+article.card {
+  border: 2em;
+  border-radius: 1rem;
+  border-color: black;
+  transition: 0.7s;
+  transform: scale(0.9);
+}
+
+article:hover {
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.7s;
+}
+
+img.project-file {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  z-index: 0;
+  margin-bottom: 90px;
+}
+
+.gradient {
+  width: 100%;
+  padding: 22px 10px 10px 10px;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9360119047619048) 53%, rgba(0,0,0,0.08) 93%, rgba(255,255,255,0)100%);
+  position: absolute;
+  bottom: 0px;
+}
+.project-title {
+  color: white;
+  margin-top: none;
+  z-index: 2;
+  padding-bottom: 2px;
+  position: relative;
+  width: max-content;
+  line-height: 42px;
+}
+.project-title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background: #ff900a;
+  width: calc( 100% + 10px);
+  left: calc( 10px * -1);
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.58s;
+}
+
+article:hover .project-title::after {
+  transform: scaleX(1);
+  transition: 0.58s;
+}
+
+.project-description {
+  font-size: 11.5px;
+  line-height: 17px;
+  margin: 5px 2px;
+}
+
+.project-info {
+  font-size: 12px;
+  text-decoration: none;
+  color: grey;
+  margin: 0;
+}
+.project-info-details {
+  float: right;
+  padding: 0 3px;
+}
+
+article.card p a {
+  color: #ff900a;
+}
+
