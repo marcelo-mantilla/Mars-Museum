@@ -15,6 +15,7 @@ main {
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  transition: 1s;
 }
 
 .mute-horizontal {
@@ -51,12 +52,22 @@ main {
 #projects {
   opacity: 1;
   animation-name: fade-in;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 @keyframes fade-in {
   0% {opacity: 0;}
   100% {opacity: 1;}
+}
+@keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0; display: none;}
+}
+
+@keyframes none-fade {
+  0% {opacity: 1;}
+  99% {opacity: 0.01;}
+  100% {opacity: 0; display: none}
 }
 
 .mars-items {
@@ -69,9 +80,12 @@ main {
   width: 100%;
   border-radius: 1em;
 }
-
 .none {
   display: none;
+}
+
+.none-fade {
+  animation: none-fade forwards;
   transition: 3s;
 }
 
